@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# News from the world
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Using API https://newsapi.org/docs/endpoints/everything
+
+- Choose if you want hot news from selected country or all news from the query
+- If you choose "hot news" fetch the news after clicking "Get news" and check if they display correctly
+- If there is an error display error message
+- If you choose all news an input should appear for query. After typing query and clicking "Get news" all must fetched and displayed. Check if all work correctly.
+- If there is an error display error message
+- If there is nothing typed into the input "Get news" button must be disabled
+- User must have option to select dates range for news "everything" in the format correct to API's
+- If there is no article picture add a placeholder
 
 ## Available Scripts
 

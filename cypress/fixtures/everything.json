@@ -1,0 +1,32 @@
+{
+  "status":"ok",
+  "totalResults":2,
+  "articles":[
+     {
+        "source":{
+           "id":"xyz",
+           "name":"xyz"
+        },
+        "author":"Radosław Madecki",
+        "title":"Żeby zrozumieć zaawansowane koncepcje, należy mieć solidne podstawy.",
+        "description":"Zdobądź je przerabiając wszystkie kursy z serii frontend developer",
+        "url":"https://www.google.com",
+        "urlToImage":"https://picsum.photos/600/300",
+        "publishedAt":"2020-11-12T14:00:00Z",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate justo non tellus mattis pharetra. Aliquam massa augue, imperdiet sit amet cursus in, mollis in tellus."
+     },
+     {
+        "source":{
+           "id":"xyz",
+           "name":"xyz"
+        },
+        "author":"Harry Potter",
+        "title":"Czy widziałeś/aś już bloga Madecki.pl?",
+        "description":"Darmowa i ciekawa wiedza dostępna na Madecki.pl",
+        "url":"https://www.madecki.pl",
+        "urlToImage":"https://picsum.photos/200/300",
+        "publishedAt":"2020-11-12T21:05:41Z",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate justo non tellus mattis pharetra. Aliquam massa augue, imperdiet sit amet cursus in, mollis in tellus."
+     }
+  ]
+}

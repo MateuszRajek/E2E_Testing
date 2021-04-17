@@ -1,0 +1,32 @@
+{
+  "status":"ok",
+  "totalResults":2,
+  "articles":[
+     {
+        "source":{
+           "id":"xyz",
+           "name":"xyz"
+        },
+        "author":"Radek Madecki",
+        "title":"Kursy wideo rewelacyjną formą poszerzania kompetencji",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate justo non tellus mattis pharetra. Aliquam massa augue, imperdiet sit amet cursus in, mollis in tellus.",
+        "url":"https://www.yahoo.com",
+        "urlToImage":"",
+        "publishedAt":"2020-11-23T16:13:00Z",
+        "content":null
+     },
+     {
+        "source":{
+          "id":"xyz",
+          "name":"xyz"
+        },
+        "author":"Albus Dumbledore",
+        "title":"To wyżej to prawda!",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate justo non tellus mattis pharetra. Aliquam massa augue, imperdiet sit amet cursus in, mollis in tellus.",
+        "url":"https://www.facebook.com",
+        "urlToImage":"",
+        "publishedAt":"2020-11-23T16:13:00Z",
+        "content":null
+     }
+  ]
+}
