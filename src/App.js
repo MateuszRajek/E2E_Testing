@@ -17,13 +17,19 @@ function App() {
 
     if (selectedNewsType === 'headlines') {
       axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
-      .then(response => updateNewsList(response.data.articles))
+      .then(response => {
+        updateNewsList(response.data.articles)
+        setLoadingStatus(null)
+      })
       .catch(() => setLoadingStatus('error'))
     }
 
     if (selectedNewsType === 'everything') {
       axios.get(`https://newsapi.org/v2/everything?q=${query}&from=${dateFrom}&to=${dateTo}&apiKey=${apiKey}`)
-      .then(response => updateNewsList(response.data.articles))
+      .then(response => {
+        updateNewsList(response.data.articles)
+        setLoadingStatus(null)
+      })
       .catch(() => setLoadingStatus('error'))
     }
   }
