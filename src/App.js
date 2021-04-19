@@ -8,11 +8,21 @@ function App() {
   const [selectedNewsType, setSelectedNewsType] = useState('headlines')
   const [newsList, updateNewsList] = useState([])
   const [loadingStatus, setLoadingStatus] = useState(null)
+  const [query, setQuery] = useState('')
+  const [ dateFrom, setDateFrom ] = useState('');
+  const [ dateTo, setDateTo ] = useState('');
 
   const getNews = event => {
     event.preventDefault()
+
     if (selectedNewsType === 'headlines') {
       axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
+      .then(response => updateNewsList(response.data.articles))
+      .catch(() => setLoadingStatus('error'))
+    }
+
+    if (selectedNewsType === 'everything') {
+      axios.get(`https://newsapi.org/v2/everything?q=${query}&from=${dateFrom}&to=${dateTo}&apiKey=${apiKey}`)
       .then(response => updateNewsList(response.data.articles))
       .catch(() => setLoadingStatus('error'))
     }
@@ -35,17 +45,59 @@ function App() {
             <option value='everything'>Everything</option>
          </select>
        </div>
+
+       {
+            selectedNewsType === 'everything' && (
+              <>
+                <label for="query">Insert query</label>
+                <input
+                  id="query"
+                  placeholder="I.e. holidays"
+                  data-testid="news-query"
+                  type="text"
+                  onChange={event => {setQuery(event.target.value)}}
+                  // required="true"
+                />
+              
+                <label for="date-from">Select starting date</label>
+                <input
+                  type="text"
+                  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+                  placeholder="YYYY-MM-DD"
+                  data-testid="news-date-from"
+                  id="date-from"
+                  value={dateFrom}
+                  onChange={event => {setDateFrom(event.target.value)}}
+                  // required="true"
+                />
+
+                <label for="date-to">Select starting date</label>
+                <input
+                  type="text"
+                  pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+                  placeholder="YYYY-MM-DD"
+                  data-testid="news-date-to"
+                  id="date-to"
+                  value={dateTo}
+                  onChange={event => {setDateTo(event.target.value)}}
+                  // required="true"
+                />
+              </>
+            )
+          }
+
+        {loadingStatus === 'error' && <div data-testid="news-error-alert" className="alert alert-danger">Couldn't fetch news data.</div>}
+
        <button
           className='btn btn-primary btn-get-news'
           type='submit'
           data-testid='get-news'
+          disabled={selectedNewsType === 'everything' && query.length === 0 ? true : false}
        >
           Get News
        </button>
      </form>
    </section>
-
-   {loadingStatus === 'error' && <div data-testid="news-error-alert" className="alert alert-danger">Couldn't fetch news data.</div>}
 
    <section className='container news-container'>
       {newsList.map(news => {
